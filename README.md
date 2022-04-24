@@ -10,12 +10,20 @@
 - glm
 - vulkan
 
-## 使用
+## 环境配置
 
 1. 使用 vscode 打开工程
 2. vscode 配置好 cmake （Makefile 生成辅助）和 gcc（编译器）
-3. vscode 执行指令 `CMake:Config`，或者 vscode cmake 插件大部分情况会自动运行 
-4. vscode 执行指令 `CMake:Build`，或者按 `F7`
-5. TERMINAL 运行 `./build/renderer` ，或者按 `F5` 使用 Debug 模式运行
+
+## 构建并运行
+### 方法一
+
+1. vscode 执行指令 `CMake:Config`，或者 vscode cmake 插件大部分情况会自动运行 
+2. vscode 执行指令 `CMake:Build`，或者按 `F7`
+3. TERMINAL 运行 `./build/renderer` ，或者按 `F5` 使用 Debug 模式运行
+
+### 方法二
+
+1. 直接按 Ctrl + Shift + B，自动执行 tasks 内容进行，配置，构建，运行
 
 ![](doc/HelloVulkan.png)

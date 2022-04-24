@@ -2,83 +2,49 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "config",
+            "type": "shell",
+            "windows": {
+                "command": "cmake",
+                "args": [
+                    "-S",".",
+                    "-B","build",
+                    "-G","MinGW Makefiles"],
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+        },
+        {
             "label": "build",
             "type": "shell",
+            "windows": {
+                "command": "cmake",
+                "args": [
+                    "--build","build",
+                    "--config", "Debug",
+                    "--target",  "all",
+                    "-j",  "14", "--"]
+            },
+            "dependsOn":["config"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "windows": {
+                "command": "./build/renderer",
+                "args": []
+            },
+            "dependsOn":["build"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "windows": {
-                "command": "cmake",
-                "args": [
-                    "build"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "make"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "make"
-                ]
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "build & run",
-            "type": "shell",
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-c",
-                    "'mingw32-make run'"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make run'"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make run'"
-                ]
-            }
-        },
-        {
-            "label": "clean",
-            "type": "shell",
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-c",
-                    "'mingw32-make clean'"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make clean'"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make clean'"
-                ]
-            }
         }
     ]
 }
