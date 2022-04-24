@@ -17,3 +17,5 @@
 3. vscode 执行指令 `CMake:Config`，或者 vscode cMake 插件大部分情况会自动运行 
 4. vscode 执行指令 `CMake:Build`，或者按 F7
 5. TERMINAL 运行 ./build/renderer ，或者按 F5 使用 Debug 模式运行
+
+![](doc/HelloVulkan.png)
