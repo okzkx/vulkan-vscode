@@ -53,7 +53,7 @@ add_subdirectory(thirdParty/glfw)
 target_link_libraries(${EXE_NAME} glfw vulkan-1)
 
 # 复制 glfw3.dll 到编译目录下
-# add_custom_command(
+# add_custom_command( 
 #     TARGET ${PROJECT_NAME} POST_BUILD
 #     COMMAND ${CMAKE_COMMAND} -E copy ${3RD_PATH}/lib/glfw/glfw3.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>/
 # )

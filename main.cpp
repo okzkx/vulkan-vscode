@@ -4,15 +4,18 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace std;
+
 int main() {
+
 	try
 	{
 		lve::FirstApp app{};
 		app.run();
 	}
-	catch (const std::exception& e)
+	catch (const exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		cerr << e.what() << endl;
 		return EXIT_FAILURE;
 	}
 	return EXIT_SUCCESS;

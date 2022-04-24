@@ -27,7 +27,8 @@
                     "-c",
                     "make"
                 ]
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "build & run",
