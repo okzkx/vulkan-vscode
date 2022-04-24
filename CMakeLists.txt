@@ -48,7 +48,7 @@ include_directories(thirdParty/vulkan/include)
 set(EXE_NAME renderer)
 # 执行编译命令
 # link_libraries(${EXE_NAME} glfw)
-add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp lve_pipeline.cpp)
+add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp lve_pipeline.cpp lve_device.cpp)
 add_subdirectory(thirdParty/glfw)
 target_link_libraries(${EXE_NAME} glfw vulkan-1)
 
