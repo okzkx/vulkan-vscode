@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Debug",
             "type": "cppdbg",
@@ -23,7 +24,7 @@
             "windows": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
-                "program": "${workspaceFolder}/output/main.exe"
+                "program": "${workspaceFolder}/build/renderer.exe"
             },
             "preLaunchTask": "build"
         }
