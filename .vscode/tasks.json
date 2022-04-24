@@ -7,14 +7,21 @@
             "windows": {
                 "command": "cmake",
                 "args": [
-                    "-S",".",
-                    "-B","build",
-                    "-G","MinGW Makefiles"],
+                    "--no-warn-unused-cli",
+                    "-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE",
+                    "-DCMAKE_BUILD_TYPE:STRING=Release",
+                    "-S",
+                    ".",
+                    "-B",
+                    "build",
+                    "-G",
+                    "MinGW Makefiles"
+                ]
             },
             "group": {
                 "kind": "build",
                 "isDefault": false
-            },
+            }
         },
         {
             "label": "build",
@@ -22,16 +29,24 @@
             "windows": {
                 "command": "cmake",
                 "args": [
-                    "--build","build",
-                    "--config", "Debug",
-                    "--target",  "all",
-                    "-j",  "14", "--"]
+                    "--build",
+                    "build",
+                    "--config",
+                    "Release",
+                    "--target",
+                    "all",
+                    "-j",
+                    "14",
+                    "--"
+                ]
             },
-            "dependsOn":["config"],
+            "dependsOn": [
+                "config"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
-            },
+            }
         },
         {
             "label": "run",
@@ -40,11 +55,14 @@
                 "command": "./build/renderer",
                 "args": []
             },
-            "dependsOn":["build"],
+            "dependsOn": [
+                "build"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "problemMatcher": []
         }
     ]
 }

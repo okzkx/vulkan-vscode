@@ -24,6 +24,6 @@
 
 ### 方法二
 
-1. 直接按 Ctrl + Shift + B，自动执行 tasks 内容进行，配置，构建，运行
+1. 直接按 Ctrl + Shift + B，自动执行 vscode tasks 以 Release 模式进行，配置，构建，运行
 
 ![](doc/HelloVulkan.png)

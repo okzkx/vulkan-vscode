@@ -21,36 +21,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # endif()
 
-# add_subdirectory(thirdParty/glfw)
-
 include_directories(thirdParty/glm)
-# include_directories(thirdParty/glfw/include)
 include_directories(thirdParty/vulkan/include)
 
-
-# FIND_LIBRARY(GLFW_LIB glfw3 thirdParty/glfw/include)
-# FIND_LIBRARY(VULKAN_1_LIB vulkan-1 thirdParty/vulkan/include)
-# link_libraries(${GLFW_LIB} ${VULKAN_1_LIB} )
-
-# 项目用到的三方库路径
-# set(3RD_PATH ${PROJECT_SOURCE_DIR}/3rd)
-
-# 头文件
-# set(3RD_INCLUDE ${3RD_PATH}/include)
-# include_directories(${3RD_INCLUDE})
-
-# 库文件
-# set(3RD_LIBS ${3RD_PATH}/lib)
-# FIND_LIBRARY(GLFW_LIB glfw3 ${3RD_LIBS}/glfw)
-# FIND_LIBRARY(VULKAN_1_LIB vulkan-1 ${3RD_LIBS}/vulkan)
-# link_libraries(${GLFW_LIB} ${VULKAN_1_LIB} )
+find_library(VULKAN_1_LIB vulkan-1 thirdParty/vulkan/lib)
 
 set(EXE_NAME renderer)
+
 # 执行编译命令
-# link_libraries(${EXE_NAME} glfw)
 add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp lve_pipeline.cpp lve_device.cpp lve_swap_chain.cpp)
 add_subdirectory(thirdParty/glfw)
-target_link_libraries(${EXE_NAME} glfw vulkan-1)
+target_link_libraries(${EXE_NAME} ${VULKAN_1_LIB} glfw)
 
 # 复制 glfw3.dll 到编译目录下
 # add_custom_command( 
