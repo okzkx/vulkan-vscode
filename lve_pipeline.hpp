@@ -9,10 +9,10 @@ namespace lve {
 	/// <summary>
 	/// copy from https://pastebin.com/EmsJWHzb
 	/// </summary>
-	struct PipelineConfigInfo{
+	struct PipelineConfigInfo {
 		VkViewport viewport;
 		VkRect2D scissor;
-		VkPipelineViewportStateCreateInfo viewportInfo;
+		//VkPipelineViewportStateCreateInfo viewportInfo;
 		VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
 		VkPipelineRasterizationStateCreateInfo rasterizationInfo;
 		VkPipelineMultisampleStateCreateInfo multisampleInfo;
@@ -27,8 +27,8 @@ namespace lve {
 	class LvePipeline
 	{
 	public:
-		LvePipeline(LveDevice& device, const std::string& vertFilePath, const std::string& fragFilePath,
-			const PipelineConfigInfo& configInfo);
+		LvePipeline(LveDevice& device, const std::string& vertFilePath,
+			const std::string& fragFilePath, const PipelineConfigInfo& configInfo);
 		~LvePipeline();
 
 		LvePipeline(const LvePipeline&) = delete;
