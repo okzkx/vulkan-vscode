@@ -45,11 +45,10 @@ include_directories(thirdParty/vulkan/include)
 # FIND_LIBRARY(VULKAN_1_LIB vulkan-1 ${3RD_LIBS}/vulkan)
 # link_libraries(${GLFW_LIB} ${VULKAN_1_LIB} )
 
-set(MAIN testEnv.cpp)
-set(EXE_NAME testEnv)
+set(EXE_NAME renderer)
 # 执行编译命令
 # link_libraries(${EXE_NAME} glfw)
-add_executable(${EXE_NAME} ${MAIN})
+add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp)
 add_subdirectory(thirdParty/glfw)
 target_link_libraries(${EXE_NAME} glfw vulkan-1)
 
