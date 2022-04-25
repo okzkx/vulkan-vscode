@@ -2,6 +2,17 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "compile",
+            "type": "shell",
+            "windows": {
+                "command": "./compile",
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
             "label": "config",
             "type": "shell",
             "windows": {
@@ -18,6 +29,9 @@
                     "MinGW Makefiles"
                 ]
             },
+            "dependsOn": [
+                "compile"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
