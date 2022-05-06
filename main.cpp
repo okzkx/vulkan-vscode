@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
+#include <glm/glm.hpp>
+#include <GLFW/glfw3.h>
 
 using namespace std;
 

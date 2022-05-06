@@ -29,7 +29,7 @@ find_library(VULKAN_1_LIB vulkan-1 thirdParty/vulkan/lib)
 set(EXE_NAME renderer)
 
 # 执行编译命令
-add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp lve_pipeline.cpp lve_device.cpp lve_swap_chain.cpp lve_model.hpp)
+add_executable(${EXE_NAME} main.cpp lve_window.cpp first_app.cpp lve_pipeline.cpp lve_device.cpp lve_swap_chain.cpp lve_model.cpp)
 add_subdirectory(thirdParty/glfw)
 target_link_libraries(${EXE_NAME} ${VULKAN_1_LIB} glfw)
 
